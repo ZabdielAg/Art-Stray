@@ -1,0 +1,36 @@
+{
+  "short_name": "Art Stray",
+  "name": "Art Stray Portafolio Digital",
+  "icons": [
+    {
+      "src": "/img/favicon1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/favicon3.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "description": "Portafolio digital.",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "es",
+  "screenshots": [
+    {
+      "src": "/img/screenshot.png",
+      "sizes": "1894x1079",
+      "type": "image/png"
+    }
+  ]
+}

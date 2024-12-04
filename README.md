@@ -1,2 +1,2 @@
 # Art-Stray
- portafolio digital
+ 
