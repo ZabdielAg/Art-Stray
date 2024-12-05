@@ -7,24 +7,23 @@ self.addEventListener('install', (event) => {
         return cache.addAll([
           '/',
           '/index.html',
-          'Java/Script.js',
-          'Java/manifest.js',
-          'css/Styles.css',
-          'img/Art_sTRAY-ico.ico',
-          'img/favicon1.png',
-          'img/modelo 1.jpeg',
-          'img/modelo 2.jpeg',
-          'img/modelo 3.jpeg',
-          'img/modelo 4.jpg',
-          'img/pagina 3.png',
-          'img/pagina web.png',
-          'img/pagina web2.png',
-          'img/programa 1.png',
-          'img/screenshot.png',
-          'img/video-modelo.png',
-
-
-        ]);
+          '/Java/Script.js',
+          '/Java/manifest.js',
+          '/css/Styles.css',
+          '/img/Art_sTRAY-ico.ico',
+          '/img/favicon1.png',
+          '/img/modelo%201.jpeg',
+          '/img/modelo%202.jpeg',
+          '/img/modelo%203.jpeg',
+          '/img/modelo%204.jpg',
+          '/img/pagina%203.png',
+          '/img/pagina%20web.png',
+          '/img/pagina%20web2.png',
+          '/img/programa%201.png',
+          '/img/screenshot.png',
+          '/img/video-modelo.png',
+        ]).catch((error) => {
+        });
       })
     );
   });
