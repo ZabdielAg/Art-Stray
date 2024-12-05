@@ -32,12 +32,30 @@ self.addEventListener('install', (event) => {
     console.log('Service Worker: Activated');
     event.waitUntil(self.clients.claim());
   });
+
+  self.addEventListener('activate', (event) => {
+    const cacheWhitelist = ['static-cache-v1'];
+    event.waitUntil(
+      caches.keys().then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (!cacheWhitelist.includes(cacheName)) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+    );
+  });
   
   self.addEventListener('fetch', (event) => {
-    console.log('Service Worker: Fetching', event.request.url);
     event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {
-        return cachedResponse || fetch(event.request);
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request).catch(() => {
+          if (event.request.destination === 'image') {
+            return caches.match('/img/screenshot.png');
+          }
+        });
       })
     );
   });
